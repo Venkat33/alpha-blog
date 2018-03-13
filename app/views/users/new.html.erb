@@ -1,23 +1,20 @@
 
-<% if @user.errors.any? %>
-<h2> the following error prevented the article form getting created</h2>
-<ul>
-<%= @user.errors.full_messages.each do |msg| %>
-<li><%= msg %></li>
-<% end %>
-</ul>
-<% end %>
-<%= form_for @user do |f| %>
-<p>
-  <%= f.label :signup %></br>
-  <%= f.text_field :signup %></p>
-  <p>
-  <%= f.label :description %></br>
-  <%= f.text_area :description %>
-</p>
-<p>
-  <%= f.submit %>
-</p>
+<h1 align="center">SIGNUP for Alpha-blog </H1>
+
+<%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+
+
+<%= f.label :username %>
+<%= f.text_field :username, class: "form-control", placeholder: "Enter username", autofocus: true %></br>
+
+<%= f.label :email %>
+<%= f.email_field :email, class: "form-control", placeholder: "Enter email" %></br>
+
+<%= f.label :password %>
+<%= f.password_field :password, class: "form-control", placeholder: "Enter password" %></br>
+
+<%= f.submit "Sign up", class: 'btn btn-primary btn-lg' %></br>
+
 <% end %>
 
-<%= link_to "Back to article", articles_path %>
+[ <%= link_to "Cancel request and return to articles listing", articles_path %> ]
