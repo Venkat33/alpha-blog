@@ -1,7 +1,7 @@
 
 <h1 align="center">SIGNUP for Alpha-blog </H1>
 
-<%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+<%= form_for(User.new) do |f| %>
 
 
 <%= f.label :username %>

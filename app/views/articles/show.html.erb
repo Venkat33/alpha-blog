@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<h1>showing selected article</h1>
+<p>Tittle: <%= @article.tittle %>
+</p>
+<p>description:<%= @article.description %>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+</p>
+<%= link_to "Edit to article", edit_article_path(@article) %>|
+<%= link_to "Back to article", articles_path %>
