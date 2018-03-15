@@ -1,20 +1,5 @@
 
-<h1 align="center">SIGNUP for Alpha-blog </H1>
-
-<%= form_for(User.new) do |f| %>
+<h1 align="center">SIGN UP for Alpha-blog </H1>
 
 
-<%= f.label :username %>
-<%= f.text_field :username, class: "form-control", placeholder: "Enter username", autofocus: true %></br>
-
-<%= f.label :email %>
-<%= f.email_field :email, class: "form-control", placeholder: "Enter email" %></br>
-
-<%= f.label :password %>
-<%= f.password_field :password, class: "form-control", placeholder: "Enter password" %></br>
-
-<%= f.submit "Sign up", class: 'btn btn-primary btn-lg' %></br>
-
-<% end %>
-
-[ <%= link_to "Cancel request and return to articles listing", articles_path %> ]
+<%= render "form"%>
