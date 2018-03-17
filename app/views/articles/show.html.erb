@@ -1,6 +1,17 @@
 <h1>showing selected article</h1>
 <p>Tittle: <%= @article.tittle %>
 </p>
+<% if @article.user %>
+<ul><li>
+<%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+</li>
+<li>
+<%= link_to @article.user.username, user_path(@article.user) %>
+</li>
+<small>
+<%= pluralize(@article.user.articles.count, "article") if @article.user.articles %> </small></li>
+</ul>
+<% end %>
 <p>description:<%= @article.description %>
 
 </p>
