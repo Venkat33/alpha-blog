@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>AlphaBlog</title>
-    <%= csrf_meta_tags %>
+    <head>
+      <title>AlphaBlog</title>
+      <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-  <body>
-     <%= render 'layouts/messages' %>
-    <%= yield %>
-  </body>
-</html>
+    <body>
+
+
+       <%= render 'layouts/messages' %>
+  <% if logged_in? %>
+    <%= link_to "Log out", logout_path, method: :delete %>
+  <ul align="right">
+    <li><%= link_to "Edit your profile", edit_user_path(current_user) %> </li>
+    <li><%= link_to "view your profile", user_path(current_user) %> </li>
+  </ul>
+  <% else %>
+      <%= link_to "Log in path", login_path %>
+      <%= link_to "sign up", signup_path %>
+   <% end %>
+      <%= yield %>
+    </body>
+  </html>
