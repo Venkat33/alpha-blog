@@ -15,6 +15,7 @@
   <% if logged_in? %>
     <%= link_to "Log out", logout_path, method: :delete %>
   <ul align="right">
+    <a href ="#"> Your profile <%= "Admin" if current_user.admin? %></a>
     <li><%= link_to "Edit your profile", edit_user_path(current_user) %> </li>
     <li><%= link_to "view your profile", user_path(current_user) %> </li>
   </ul>

@@ -9,5 +9,10 @@
 </li>
 <small>
 <%= pluralize(user.articles.count, "article") if user.articles %> </small></li>
-</ul><%= will_paginate %>
+</ul>
+<%= link_to "delete this users", user_path(user), method: :delete %>
+<% if logged_in? and current_user.admin? %>
+data: {confirm: "are you sure delete the user and articles"} %>
+<% end %>
+<%= will_paginate %>
 <% end %>
